@@ -1,0 +1,944 @@
+/* Couleurs principales */
+:root {
+    --orange: #F56416;
+    --jaune: #FBBA16;
+    --beige-clair: #EAD2AC;
+    --beige-fonce: #FAF4DE;
+    --noir: #0C0C0C;
+    --blanc: #FFFFFF;
+}
+
+/* Réinitialisation des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--noir);
+    background-color: var(--beige-fonce);
+}
+
+/* Navigation principale */
+.sticky-nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--beige-fonce);
+    padding: 0.5vh 10vw;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo img {
+    width: 120px;
+    border-radius: 25px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--noir);
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    color: var(--beige-fonce);
+}
+
+.nav-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 5vw;
+}
+
+.nav-icons a img {
+    
+    width: 24px;
+    margin-left: 15px;
+}
+
+/* Style de base pour la navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .nav-links a:hover {
+    background-color: var(--orange);
+    border-radius: 5px;
+  }
+  
+  /* Style du menu déroulant pour le login */
+  .login-dropdown {
+    position: relative;
+    padding-right: 4vw;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    right: 0;
+    min-width: 150px;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  /* Afficher le menu déroulant au survol */
+  .login-dropdown:hover .dropdown-content {
+    display: block;
+  } 
+
+/* Sections */
+.section-padding {
+    padding: 5vh 20vw;
+}
+
+#presentation {
+    text-align: center;
+    background-color: var(--beige-fonce);
+    margin: 6%;
+}
+
+#presentation h1 {
+    font-size: 3em;
+    color: var(--orange);
+    margin-bottom: 20px;
+}
+
+#presentation p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: var(--noir);
+}
+
+/* Smash Classic Section */
+#smash-classic {
+    color: var(--blanc);
+}
+
+.smash-classic-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.smash-classic-image img {
+    width: 300px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.smash-classic-text {
+    max-width: 500px;
+    margin: 20px;
+}
+
+.smash-classic-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.smash-classic-text p {
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.btn-commander {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--jaune);
+    color: var(--noir);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn-commander:hover {
+    background-color: var(--blanc);
+}
+
+/* La Carte Section */
+/* Titres de section */
+#carte h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--orange);
+}
+
+/* Navigation des catégories */
+.carte-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.carte-nav ul li {
+    padding: 10px 15px;
+}
+
+.carte-nav ul li a {
+    text-decoration: none;
+    color: var(--noir);
+    font-weight: bold;
+    transition: color 0.3s, border-bottom 0.3s;
+    padding-bottom: 5px;
+}
+
+.carte-nav ul li.active a,
+.carte-nav ul li a:hover {
+    color: var(--orange);
+    border-bottom: 2px solid var(--orange);
+}
+
+/* Conteneur des produits */
+.produits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.produit {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    text-align: center;
+    background-color: var(--beige-fonce);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.produit img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.produit h3 {
+    margin: 10px 0;
+    color: var(--orange);
+    font-size: 1.1em;
+}
+
+.produit p {
+    font-size: 0.9em;
+    color: var(--noir);
+    margin-bottom: 10px;
+}
+
+.btn-ajouter {
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px 15px;
+    background-color: var(--orange);
+    color: var(--blanc);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-ajouter:hover {
+    background-color: var(--jaune);
+    color: var(--noir);
+}
+
+/* Styles pour les badges */
+.badges {
+    margin-top: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    color: var(--blanc);
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.badge.promotion {
+    background-color: #e74c3c; /* Rouge pour les promotions */
+}
+
+.badge.nouveaute {
+    background-color: #27ae60; /* Vert pour les nouveautés */
+}
+
+.badge.vegetarien {
+    background-color: #f1c40f; /* Jaune pour les options végétariennes */
+}
+/* Style pour les prix */
+.prix {
+    font-size: 1.2em;
+    color: var(--orange);
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Responsive design pour les produits */
+@media (max-width: 768px) {
+    .produit {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .produit {
+        width: 100%;
+    }
+}
+
+/* Optionnel : Styles pour les états actifs des liens de navigation */
+.carte-nav ul li.active a {
+    border-bottom: 2px solid var(--orange);
+}
+
+.carte-nav ul li a {
+    padding-bottom: 5px;
+}
+
+/* Transition pour le changement de couleur sur les liens */
+.carte-nav ul li a {
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+/* Restaurant Section */
+#restaurant h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--orange);
+}
+
+.restaurant-info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.map {
+    display: flex;
+    justify-content: center;
+}
+
+.map iframe {
+    width: 80%;
+    height: 450px;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* Contact Section */
+#contact h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--orange);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--beige-clair);
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 15px 30px;
+    background-color: var(--orange);
+    color: var(--blanc);
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: var(--jaune);
+    color: var(--noir);
+}
+
+/* Pied de page */
+footer {
+    background-color: var(--noir);
+    color: var(--blanc);
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ... (votre code CSS précédent) ... */
+
+/* Style pour le compteur du panier */
+#cart-counter {
+    position: absolute;
+    background-color: var(--orange);
+    color: var(--blanc);
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 0.8em;
+}
+
+/* Si vous implémentez le menu mobile */
+.nav-links.nav-active {
+    display: block;
+}
+
+/* Styles pour les notifications (si vous souhaitez les personnaliser) */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--orange);
+    color: var(--blanc);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+}
+
+.notification.show {
+    display: block;
+}
+/* Style pour le menu mobile */
+.mobile-menu-icon {
+    display: none;
+}
+
+/* Afficher le menu hamburger sur les petits écrans */
+@media (max-width: 768px) {
+    .mobile-menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--blanc);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+    .nav-links.nav-active {
+        display: flex;
+    }
+    .nav-links li {
+        text-align: center;
+        padding: 15px 0;
+    }
+}
+/* Pied de page */
+footer {
+    background-color: var(--noir);
+    color: var(--blanc);
+    padding: 40px 20px;
+}
+
+.footer-nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-nav ul li {
+    margin: 5px 0;
+}
+
+.footer-nav ul li a {
+    color: var(--blanc);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.footer-nav ul li a:hover {
+    color: var(--orange);
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-info p {
+    margin: 0;
+    font-size: 0.9em;
+}
+/* Section de l'inscription */
+.inscription-section {
+    max-width: 600px;
+    margin: 10% auto;
+    background-color: var(--beige-fonce);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.inscription-section h1 {
+    text-align: center;
+    color: var(--orange);
+    margin-bottom: 20px;
+}
+
+.inscription-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inscription-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--noir);
+}
+
+.inscription-form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--beige-clair);
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+}
+
+.telephone-field {
+    display: flex;
+    gap: 10px;
+}
+
+.password-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.password-field i {
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.newsletter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.newsletter input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    padding: 15px;
+    background-color: var(--orange);
+    color: var(--blanc);
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--jaune);
+    color: var(--noir);
+}
+
+/* Styles pour la galerie de photos */
+#galerie h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--orange);
+}
+
+.galerie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.photo-item {
+    width: 250px;
+    text-align: center;
+}
+
+.photo-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.photo-item p {
+    color: var(--noir);
+}
+
+/* Styles pour les avis des clients */
+#avis-clients h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--orange);
+}
+
+.avis-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.avis-item {
+    background-color: var(--beige-fonce);
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avis-item h3 {
+    color: var(--orange);
+}
+
+.avis-item p {
+    color: var(--noir);
+}
+
+/* Formulaire pour laisser un avis */
+.avis-form {
+    margin-top: 40px;
+    width: 60%;
+    background-color: var(--beige-clair);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.avis-form input,
+.avis-form select,
+.avis-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--beige-clair);
+}
+
+.avis-form button {
+    padding: 10px;
+    background-color: var(--orange);
+    color: var(--blanc);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.avis-form button:hover {
+    background-color: var(--jaune);
+    color: var(--noir);
+}
+
+/* Cacher le dropdown du panier par défaut */
+.cart-dropdown {
+    display: none; /* Caché par défaut */
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 300px;
+    background-color: var(--beige-clair);
+    border: 1px solid var(--beige-clair);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    max-height: 400px; /* Limite la hauteur maximale */
+    overflow-y: auto; /* Ajoute une barre de défilement si le contenu dépasse */
+    transition: all 0.3s ease-in-out; /* Transition douce pour l'ouverture */
+}
+
+/* Afficher le dropdown du panier uniquement lorsqu'on clique */
+.cart-icon-container.show .cart-dropdown {
+    display: block;
+}
+
+.cart-dropdown h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: var(--orange);
+}
+
+#cart-items-container {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cart-item p {
+    margin: 0;
+}
+
+.cart-item .remove-item {
+    color: red;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+#checkout-button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--orange);
+    color: var(--blanc);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#checkout-button:hover {
+    background-color: var(--jaune);
+    color: var(--noir);
+}
+
+/* Style pour le dropdown du panier */
+.cart-dropdown {
+    display: none; /* Caché par défaut */
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 300px;
+    background-color: var(--beige-clair);
+    border: 1px solid var(--beige-clair);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    max-height: 400px; /* Limite la hauteur maximale */
+    overflow-y: auto; /* Ajoute une barre de défilement si le contenu dépasse */
+    transition: all 0.3s ease-in-out; /* Transition douce pour l'ouverture */
+}
+
+/* Afficher le dropdown du panier avec ajustement dynamique */
+.cart-icon-container.show .cart-dropdown {
+    display: block;
+}
+
+/* Style pour chaque élément du panier */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-quantity {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.cart-quantity button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cart-quantity .quantity {
+    width: 30px;
+    text-align: center;
+}
+
+#cart-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: right;
+}
+
+
+/* Style de base pour la notification d'ajout au panier */
+.cart-notification {
+    position: fixed;
+    top: 15vh;
+    right: 10vw;
+    background-color: var(--orange); /* Utilisez votre couleur principale */
+    color: var(--blanc);
+    padding: 15px 20px;
+    border: #0C0C0C 2px solid;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Caché par défaut */
+    visibility: hidden; /* Pour que l'élément ne prenne pas de place dans le DOM */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 10000; /* Assurez-vous qu'il soit au-dessus de tout */
+}
+
+/* Style visible pour la notification */
+.cart-notification.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Style pour la galerie carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--blanc);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.indicators {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+/* Style pour le slogan */
+.slogan {
+    font-size: 2em;
+    color: var(--orange);
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* mot de passe */
+.password-toggle {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle img {
+    width: 20px;
+    height: 20px;
+}

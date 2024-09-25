@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SBOOM! - Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
+</head>
+<body>
+    <!-- Notification d'ajout au panier -->
+    <div id="cart-notification" class="cart-notification">
+        Produit ajouté au panier !
+    </div>
+
+    <!-- Navigation principale -->
+    <header>
+        <nav class="sticky-nav">
+            <div class="logo">
+                <a href="index.html"><img src="images/IMG-20240921-WA0042.jpg" alt="SBOOM! Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#carte">La carte</a></li>
+                <li><a href="#histoire">Notre histoire</a></li>
+                <li><a href="#restaurant">Restaurant</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <!-- Dropdown pour Login -->
+                <div class="login-dropdown">
+                    <a href="#"><img src="images/user.png" alt="Login"></a>
+                    <div class="dropdown-content">
+                        <a href="connexion.html">Se connecter</a>
+                        <a href="inscription.html">S'inscrire</a>
+                    </div>
+                </div>
+
+                <!-- Panier (Conteneur spécifique autour du panier) -->
+                <div class="cart-icon-container">
+                    <a href="#" id="cart-icon">
+                        <img src="images/shopping-cart.png" alt="Panier">
+                        <span id="cart-counter">0</span>
+                    </a>
+
+                    <!-- Contenu du panier (qui s'affiche en clic) -->
+                    <div id="cart-dropdown" class="cart-dropdown">
+                        <h3>Votre Panier</h3>
+                        <div id="cart-items-container">
+                            <p>Votre panier est vide.</p>
+                        </div>
+                        <div id="cart-total">
+                            <p>Total: CHF 0.00</p> <!-- Par défaut, le total est de 0.00 -->
+                        </div>
+                        <button id="checkout-button" class="btn-commander" style="display: none;">Passer commande</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-menu-icon" id="mobile-menu-icon">
+                <img src="images/menu.png" alt="Menu">
+            </div>
+        </nav>
+    </header>    
+    
+    <!-- Section de présentation de l'entreprise -->
+    <section id="presentation" class="section-padding">
+        <h1>Bienvenue chez SBOOM!</h1>
+        <h2 class="slogan">UNE EXPLOSION EN BOUCHE</h2>
+        <p>Découvrez l’art du Smash Burger dans une ambiance conviviale au cœur du Mont-sur-Lausanne. 
+            Imaginé par deux jeunes Lausannois passionnés, <strong>SBOOM!</strong> est votre nouveau repère pour savourer des burgers <strong>faits maison</strong> avec des ingrédients locaux et de qualité. 
+            Chaque bouchée vous offre une explosion de saveurs uniques, dans un cadre chaleureux et familial.</p>
+        <p>Venez vivre l’expérience <strong>SBOOM!</strong>, où la simplicité du fast-food rencontre l’excellence du goût.</p>
+    </section>
+
+    <!-- Section du Smash Classic -->
+    <section id="smash-classic" class="section-padding" style="background-color: #F56416;">
+        <div class="smash-classic-content">
+            <div class="smash-classic-image">
+                <img src="images/burger.png" alt="Smash Classic Burger">
+            </div>
+            <div class="smash-classic-text">
+                <h2>Le Smash Classic – L’incontournable de SBOOM!</h2>
+                <p>Notre <strong>Smash Classic</strong> est bien plus qu’un simple burger, c’est la star de notre menu et le préféré de nos clients ! Composé de bœuf frais écrasé à la perfection pour obtenir cette croûte croustillante, accompagné de fromage fondant, de laitue croquante, de tomate juteuse et de notre sauce maison secrète, le tout dans un pain brioché artisanal. Chaque bouchée vous plonge dans un équilibre parfait de saveurs et de textures.</p>
+                <a href="#" class="btn-commander">COMMANDER</a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Section La Carte -->
+<!-- Section La Carte -->
+<section id="carte" class="section-padding">
+    <h2>La Carte</h2>
+    <!-- Navigation des catégories -->
+    <div class="carte-nav">
+        <ul>
+            <li class="active"><a href="#" data-category="promotions">Promotions</a></li>
+            <li><a href="#" data-category="burgers">Burgers</a></li>
+            <li><a href="#" data-category="accompagnements">Accompagnements</a></li>
+            <li><a href="#" data-category="sauces">Sauces</a></li>
+            <li><a href="#" data-category="boissons">Boissons</a></li>
+            <li><a href="#" data-category="desserts">Desserts</a></li>
+        </ul>
+    </div>
+    
+    <!-- Produits -->
+    <!-- Promotions -->
+    <div class="produits" id="promotions">
+        <!-- Produit en promotion -->
+        <div class="produit">
+            <img src="images/burger.png" alt="Burger Promo">
+            <h3>Smash Burger Promo</h3>
+            <p>Un délicieux burger en promotion cette semaine !</p>
+            <div class="badges">
+                <span class="badge promotion">Promotion</span>
+            </div>
+            <p class="prix">CHF 10.90</p> <!-- Ajout du prix -->
+            <button class="btn-ajouter">Ajouter au panier</button>
+        </div>
+    </div>
+
+    <!-- Burgers -->
+    <div class="produits" id="burgers" style="display: none;">
+        <div class="produit">
+            <img src="images/classic-burger.png" alt="Classic Burger">
+            <h3>Classic Smash Burger</h3>
+            <p>Bœuf frais, fromage, laitue, tomate, sauce spéciale.</p>
+            <p class="prix">CHF 12.50</p> <!-- Ajout du prix -->
+            <button class="btn-ajouter">Ajouter au panier</button>
+        </div>
+        <div class="produit">
+            <img src="images/veggie-burger.png" alt="Veggie Burger">
+            <h3>Veggie Smash Burger</h3>
+            <p>Galette de légumes, fromage, laitue, tomate, sauce végétarienne.</p>
+            <div class="badges">
+                <span class="badge nouveaute">Nouveauté</span>
+                <span class="badge vegetarien">Végétarien</span>
+            </div>
+            <p class="prix">CHF 11.50</p> <!-- Ajout du prix -->
+            <button class="btn-ajouter">Ajouter au panier</button>
+        </div>
+        <div class="produit">
+            <img src="images/chicken-burger.png" alt="Chicken Burger">
+            <h3>Chicken Smash Burger</h3>
+            <p>Poulet croustillant, fromage, laitue, sauce BBQ.</p>
+            <p class="prix">CHF 13.90</p> <!-- Ajout du prix -->
+            <button class="btn-ajouter">Ajouter au panier</button>
+        </div>
+    </div>
+
+    <!-- Accompagnements -->
+    <div class="produits" id="accompagnements" style="display: none;">
+        <div class="produit">
+            <img src="images/frites.png" alt="Frites Maison">
+            <h3>Frites Maison</h3>
+            <p>Frites fraîches coupées à la main.</p>
+            <p class="prix">CHF 4.90</p> <!-- Ajout du prix -->
+            <button class="btn-ajouter">Ajouter au panier</button>
+        </div>
+        <div class="produit">
+            <img src="images/assiette.png" alt="Salade Verte">
+            <h3>Salade Verte</h3>
+            <p>Salade croquante avec vinaigrette maison.</p>
+            <div class="badges">
+                <span class="badge nouveaute">Nouveauté</span>
+                <span class="badge vegetarien">Végétarien</span>
+            </div>
+            <p class="prix">CHF 5.50</p> <!-- Ajout du prix -->
+            <button class="btn-ajouter">Ajouter au panier</button>
+        </div>
+    </div>
+
+    <!-- Sauces -->
+    <div class="produits" id="sauces" style="display: none;">
+        <div class="produit">
+            <img src="images/sauce-bbq.png" alt="Sauce BBQ">
+            <h3>Sauce BBQ</h3>
+            <p>Sauce barbecue fumée.</p>
+            <p class="prix">CHF 1.50</p> <!-- Ajout du prix -->
+            <button class="btn-ajouter">Ajouter au panier</button>
+        </div>
+        <div class="produit">
+            <img src="images/sauce-mayo.png" alt="Sauce Mayonnaise">
+            <h3>Sauce Mayonnaise</h3>
+            <p>Mayonnaise faite maison.</p>
+            <p class="prix">CHF 1.50</p> <!-- Ajout du prix -->
+            <button class="btn-ajouter">Ajouter au panier</button>
+        </div>
+    </div>
+
+    <!-- Boissons -->
+    <div class="produits" id="boissons" style="display: none;">
+        <div class="produit">
+            <img src="images/cola.png" alt="Cola">
+            <h3>Cola</h3>
+            <p>Boisson rafraîchissante gazeuse.</p>
+            <p class="prix">CHF 3.50</p> <!-- Ajout du prix -->
+            <button class="btn-ajouter">Ajouter au panier</button>
+        </div>
+        <div class="produit">
+            <img src="images/limonade.png" alt="Limonade Maison">
+            <h3>Limonade Maison</h3>
+            <p>Limonade fraîche faite maison.</p>
+            <div class="badges">
+                <span class="badge promotion">Promotion</span>
+            </div>
+            <p class="prix">CHF 3.00</p> <!-- Ajout du prix -->
+            <button class="btn-ajouter">Ajouter au panier</button>
+        </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="produits" id="desserts" style="display: none;">
+        <div class="produit">
+            <img src="images/brownie.png" alt="Brownie">
+            <h3>Brownie Chocolat</h3>
+            <p>Délicieux brownie au chocolat noir.</p>
+            <div class="badges">
+                <span class="badge nouveaute">Nouveauté</span>
+            </div>
+            <p class="prix">CHF 4.50</p> <!-- Ajout du prix -->
+            <button class="btn-ajouter">Ajouter au panier</button>
+        </div>
+        <div class="produit">
+            <img src="images/ice-cream.png" alt="Glace Vanille">
+            <h3>Glace Vanille</h3>
+            <p>Glace artisanale à la vanille.</p>
+            <p class="prix">CHF 3.90</p> <!-- Ajout du prix -->
+            <button class="btn-ajouter">Ajouter au panier</button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Section Restaurant -->
+    <section id="restaurant" class="section-padding">
+        <h2>Restaurant</h2>
+        <div class="restaurant-info">
+            <p><strong>Adresse :</strong> En Budron H7, Box 14, 1052 Le Mont-sur-Lausanne</p>
+            <p><strong>Téléphone :</strong> +41 21 123 45 67</p>
+            <p><strong>Email :</strong> contact@sboom.ch</p>
+            <p><strong>Heures d'ouverture :</strong> Lundi - Dimanche : 11h - 14h & 18h - 22h</p>
+        </div>
+        <div class="map">
+            <!-- Intégration de Google Maps avec l'adresse mise à jour -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2760.445529552538!2d6.632282015382977!3d46.56655297912943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c2b5682739b5b%3A0xf1b6c22e816a94c3!2sEn%20Budron%20H%207%2C%201052%20Le%20Mont-sur-Lausanne%2C%20Suisse!5e0!3m2!1sfr!2sch!4v1696583529421!5m2!1sfr!2sch" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Section Galerie de photos -->
+    <section id="galerie" class="section-padding">
+        <h2>Galerie de photos</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <img src="images/assiette.png" alt="Plat 1" class="carousel-image">
+                <img src="images/bg_legumes.png" alt="Intérieur du restaurant" class="carousel-image">
+                <img src="images/IMG-20240921-WA0037.jpg" alt="Équipe" class="carousel-image">
+                <img src="images/IMG-20240921-WA0005.jpg" alt="Plat 2" class="carousel-image">
+            </div>
+
+            <!-- Flèches de navigation -->
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+            <!-- Indicateurs -->
+            <div class="indicators">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Avis des clients -->
+    <section id="avis-clients" class="section-padding">
+        <h2>Avis des clients</h2>
+        <div class="avis-container">
+            <div class="avis-item">
+                <h3>Jean Dupont</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>"Le Smash Burger est juste incroyable, des saveurs uniques et un cadre chaleureux. Je recommande vivement !"</p>
+            </div>
+            <div class="avis-item">
+                <h3>Marie Martin</h3>
+                <p>⭐⭐⭐⭐</p>
+                <p>"L'accueil est super et les burgers sont délicieux, parfait pour une soirée entre amis."</p>
+            </div>
+            <div class="avis-item">
+                <h3>Louis Durant</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>"Le meilleur burger de la ville ! Des produits frais et un service au top."</p>
+            </div>
+        </div>
+        <!-- Formulaire pour laisser un avis -->
+        <form id="form-avis" class="avis-form">
+            <h3>Laissez un avis</h3>
+            <input type="text" name="nom" placeholder="Votre nom" required>
+            <select name="note" required>
+                <option value="" disabled selected>Note</option>
+                <option value="5">⭐⭐⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="1">⭐</option>
+            </select>
+            <textarea name="avis" placeholder="Votre avis" required></textarea>
+            <button type="submit">Soumettre</button>
+        </form>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section-padding">
+        <h2>Contact</h2>
+        <form action="#" method="post" class="contact-form">
+            <input type="text" name="nom" placeholder="Nom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="sujet" placeholder="Sujet" required>
+            <textarea name="message" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+  
+    <!-- Pied de page -->
+    <footer>
+        <div class="footer-nav">
+            <ul>
+                <li><a href="#histoire">Notre histoire</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#mentions-legales">Mentions légales</a></li>
+                <li><a href="#jobs">Jobs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-info">
+            <p>© 2024 conçu par Derval Botuna. SBOOM! Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

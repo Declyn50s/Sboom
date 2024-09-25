@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SBOOM! - Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
+</head>
+<body>
+    <header>
+        <nav class="sticky-nav">
+            <div class="logo">
+                <a href="index.html"><img src="images/IMG-20240921-WA0042.jpg" alt="SBOOM! Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#carte">La carte</a></li>
+                <li><a href="#histoire">Notre histoire</a></li>
+                <li><a href="#restaurant">Restaurant</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <!-- Dropdown pour Login -->
+                <div class="login-dropdown">
+                    <a href="#"><img src="images/user.png" alt="Login"></a>
+                    <div class="dropdown-content">
+                        <a href="connexion.html">Se connecter</a>
+                        <a href="inscription.html">S'inscrire</a>
+                    </div>
+                </div>
+
+                <!-- Panier (Conteneur spécifique autour du panier) -->
+                <div class="cart-icon-container">
+                    <a href="#" id="cart-icon">
+                        <img src="images/shopping-cart.png" alt="Panier">
+                        <span id="cart-counter">0</span>
+                    </a>
+
+                    <!-- Contenu du panier (qui s'affiche en clic) -->
+                    <div id="cart-dropdown" class="cart-dropdown">
+                        <h3>Votre Panier</h3>
+                        <div id="cart-items-container">
+                            <p>Votre panier est vide.</p>
+                        </div>
+                        <div id="cart-total">
+                            <p>Total: CHF 0.00</p> <!-- Par défaut, le total est de 0.00 -->
+                        </div>
+                        <button id="checkout-button" class="btn-commander" style="display: none;">Passer commande</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mobile-menu-icon" id="mobile-menu-icon">
+                <img src="images/menu.png" alt="Menu">
+            </div>
+        </nav>
+    </header> 
+
+    <section class="inscription-section">
+        <h1>Inscription</h1>
+        <form id="inscription-form" action="php/inscription.php" method="POST">
+            
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre adresse e-mail" required>
+
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+
+            <label for="date_naissance">Date de naissance</label>
+            <input type="date" id="date_naissance" name="date_naissance" placeholder="dd/mm/yyyy" required>
+
+            <label for="telephone">Numéro de téléphone</label>
+            <div class="telephone-field">
+                <select name="indicatif" id="indicatif">
+                    <option value="+41">+41 (Suisse)</option>
+                    <!-- Ajouter d'autres options ici si nécessaire -->
+                </select>
+                <input type="tel" id="telephone" name="telephone" placeholder="Entrez votre numéro de téléphone" required>
+            </div>
+
+            <label for="mot_de_passe">Mot de passe</label>
+            <div class="password-field">
+                <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="Entrez votre mot de passe" required>
+                <i class="uil uil-eye-slash" id="togglePassword"></i>
+            </div>
+
+            <label for="repeter_mot_de_passe">Répéter mot de passe</label>
+            <input type="password" id="repeter_mot_de_passe" name="repeter_mot_de_passe" placeholder="Répétez votre mot de passe" required>
+
+            <label for="code_postal">Code postal</label>
+            <input type="text" id="code_postal" name="code_postal" placeholder="Entrez votre code postal" required>
+            
+            <label for="localite">Localité</label>
+            <input type="text" id="localite" name="localite" placeholder="La localité sera remplie automatiquement" readonly>
+
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" name="adresse" placeholder="Entrez votre adresse" required>
+
+            <div class="newsletter">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">S'abonner à la newsletter</label>
+            </div>
+
+            <button type="submit">S'inscrire</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 SBOOM! Tous droits réservés.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+<footer>
+    <div class="footer-nav">
+        <ul>
+            <li><a href="#histoire">Notre histoire</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#mentions-legales">Mentions légales</a></li>
+            <li><a href="#jobs">Jobs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <div class="footer-info">
+        <p>© 2024 conçu par Derval Botuna. SBOOM! Tous droits réservés.</p>
+    </div>
+</footer>
+</html>
