@@ -269,4 +269,14 @@ $('#code_postal').on('input', function() {
         }
     }
 });
+// Basculer l'affichage du mot de passe
+document.querySelectorAll('#togglePassword').forEach(togglePassword => {
+    togglePassword.addEventListener('click', function () {
+        const passwordField = this.previousElementSibling;
+        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordField.setAttribute('type', type);
+        this.classList.toggle('uil-eye');
+        this.classList.toggle('uil-eye-slash');
+    });
+});
 

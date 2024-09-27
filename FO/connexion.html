@@ -2,11 +2,17 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>SBOOM! - Accueil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion SBOOM</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
 </head>
 <body>
+    <!-- Notification d'ajout au panier -->
+    <div id="cart-notification" class="cart-notification">
+        Produit ajouté au panier !
+    </div>
+
+    <!-- Navigation principale -->
     <header>
         <nav class="sticky-nav">
             <div class="logo">
@@ -54,66 +60,30 @@
                 <img src="images/menu.png" alt="Menu">
             </div>
         </nav>
-    </header> 
+    </header>
+    <section class="connexion-section">
+        <h1>Connexion</h1>
+        <?php if (isset($erreur)) : ?>
+    <p class="erreur"><?php echo htmlspecialchars($erreur); ?></p>
+<?php endif; ?>
 
-    <section class="inscription-section">
-        <h1>Inscription</h1>
-        <form id="inscription-form" action="php/inscription.php" method="POST">
-            
-            <label for="email">E-mail</label>
+        <form action="connexion.php" method="POST">
+            <label for="email">E-mail :</label>
             <input type="email" id="email" name="email" placeholder="Entrez votre adresse e-mail" required>
 
-            <label for="prenom">Prénom</label>
-            <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
-
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
-
-            <label for="date_naissance">Date de naissance</label>
-            <input type="date" id="date_naissance" name="date_naissance" placeholder="dd/mm/yyyy" required>
-
-            <label for="telephone">Numéro de téléphone</label>
-            <div class="telephone-field">
-                <select name="indicatif" id="indicatif">
-                    <option value="+41">+41 (Suisse)</option>
-                    <!-- Ajouter d'autres options ici si nécessaire -->
-                </select>
-                <input type="tel" id="telephone" name="telephone" placeholder="Entrez votre numéro de téléphone" required>
-            </div>
-
-            <label for="mot_de_passe">Mot de passe</label>
+            <label for="mot_de_passe">Mot de passe :</label>
             <div class="password-field">
                 <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="Entrez votre mot de passe" required>
                 <i class="uil uil-eye-slash" id="togglePassword"></i>
             </div>
 
-            <label for="repeter_mot_de_passe">Répéter mot de passe</label>
-            <input type="password" id="repeter_mot_de_passe" name="repeter_mot_de_passe" placeholder="Répétez votre mot de passe" required>
+            <a href="mot_de_passe_oublie.html">Mot de passe oublié ?</a>
 
-            <label for="code_postal">Code postal</label>
-            <input type="text" id="code_postal" name="code_postal" placeholder="Entrez votre code postal" required>
-            
-            <label for="localite">Localité</label>
-            <input type="text" id="localite" name="localite" placeholder="La localité sera remplie automatiquement" readonly>
-
-            <label for="adresse">Adresse</label>
-            <input type="text" id="adresse" name="adresse" placeholder="Entrez votre adresse" required>
-
-            <div class="newsletter">
-                <input type="checkbox" id="newsletter" name="newsletter">
-                <label for="newsletter">S'abonner à la newsletter</label>
-            </div>
-
-            <button type="submit">S'inscrire</button>
+            <button type="submit">Se connecter</button>
         </form>
+        <a href="inscription.html">Déjà inscrit ?</a>
     </section>
-
-    <footer>
-        <p>© 2024 SBOOM! Tous droits réservés.</p>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
+<!-- Pied de page -->
 <footer>
     <div class="footer-nav">
         <ul>
@@ -128,4 +98,6 @@
         <p>© 2024 conçu par Derval Botuna. SBOOM! Tous droits réservés.</p>
     </div>
 </footer>
+    <script src="js/script.js"></script>
+</body>
 </html>

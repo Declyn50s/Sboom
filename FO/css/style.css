@@ -536,7 +536,7 @@ footer {
     font-size: 0.9em;
 }
 /* Section de l'inscription */
-.inscription-section {
+.inscription-section, .connexion-section, .reset-section {
     max-width: 600px;
     margin: 10% auto;
     background-color: var(--beige-fonce);
@@ -544,24 +544,24 @@ footer {
     border-radius: 10px;
 }
 
-.inscription-section h1 {
+.inscription-section h1, .connexion-section h1, .reset-section h1 {
     text-align: center;
     color: var(--orange);
     margin-bottom: 20px;
 }
 
-.inscription-form {
+.inscription-form, .connexion-form {
     display: flex;
     flex-direction: column;
 }
 
-.inscription-form label {
+.inscription-form label, .connexion-form label {
     margin-bottom: 5px;
     font-weight: bold;
     color: var(--noir);
 }
 
-.inscription-form input {
+.inscription-form input, .connexion-form input {
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid var(--beige-clair);

@@ -88,6 +88,31 @@
     </section>
 
     <!-- Section La Carte -->
+     <!-- Extrait de la section "La Carte" -->
+<?php
+require_once 'php/config.php';
+
+// Récupérer les catégories
+$categories = $conn->query("SELECT * FROM categories");
+
+// Boucle sur les catégories
+while ($categorie = $categories->fetch_assoc()) {
+    echo '<h3>' . htmlspecialchars($categorie['nom']) . '</h3>';
+
+    // Récupérer les produits de la catégorie
+    $produits = $conn->prepare("SELECT * FROM produits WHERE categorie_id = ?");
+    $produits->bind_param("i", $categorie['id']);
+    $produits->execute();
+    $result_produits = $produits->get_result();
+
+    echo '<div class="produits">';
+    while ($produit = $result_produits->fetch_assoc()) {
+        // Affichage du produit
+    }
+    echo '</div>';
+}
+?>
+
 <!-- Section La Carte -->
 <section id="carte" class="section-padding">
     <h2>La Carte</h2>
